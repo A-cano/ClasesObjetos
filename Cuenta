@@ -1,0 +1,83 @@
+package cuenta;
+
+public class Cuenta {
+    
+    private String titular;
+    private double total;
+    private double cantidad;
+
+    
+    public Cuenta(String titular) {
+        this.titular = titular;
+        this.total = 5000; 
+        this.cantidad = 0;
+    }
+
+    
+    public Cuenta(String titular, double cantidad) {
+        this.titular = titular;
+        this.total = 5000; 
+        this.cantidad = cantidad;
+    }
+
+    
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public double getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(double cantidad) {
+        this.cantidad = cantidad;
+    }
+
+   
+    public void ingresar(double cantidad) {
+        if (cantidad > 0) {
+            total += cantidad;
+            System.out.println("Se han ingresado $" + cantidad + ". Saldo actual: $" + total);
+        } else {
+            System.out.println("No se pueden ingresar cantidades negativas.");
+        }
+    }
+
+    
+    public void retirar(double cantidad) {
+        if (cantidad < 0) {
+            total = 5000; 
+            System.out.println("No puedes retirar valores negativos. Saldo restablecido a $" + total);
+        } else if (total - cantidad < 0) {
+            total = 0; 
+            System.out.println("No hay suficiente saldo. Se ha retirado todo el dinero. Saldo actual: $" + total);
+        } else {
+            total -= cantidad;
+            System.out.println("Se han retirado $" + cantidad + ". Saldo actual: $" + total);
+        }
+    }
+
+    
+    public static void main(String[] args) {
+        Cuenta cuenta1 = new Cuenta("Juan");
+        cuenta1.ingresar(2800); 
+        cuenta1.retirar(2000); 
+
+        Cuenta cuenta2 = new Cuenta("Maria", 300);
+        cuenta2.ingresar(1500);
+        cuenta2.retirar(70600); 
+        cuenta2.retirar(-100); 
+    }
+}
