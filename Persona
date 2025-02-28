@@ -1,0 +1,27 @@
+
+package persona;
+
+public class Persona {
+   String nombre;
+    int edad;
+
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public void mostrar() {
+        System.out.println("El nombre de la persona es: " + nombre);
+        System.out.println("La edad de la persona es: " + edad);
+    }
+    
+    public void correr() {
+        System.out.println("Soy " + nombre + ", tengo " + edad + " años y he corrido mucho.");
+    }
+
+    public static void main(String[] args) {
+        
+        Persona persona = new Persona("Paulo", 21);
+        persona.correr();
+        persona.mostrar();
+    }
