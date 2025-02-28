@@ -1,0 +1,29 @@
+package vehiculo;
+public class Vehiculo {
+    int numpersonas;
+    int cc;
+    int cmc;
+
+    public Vehiculo(int numpersoas, int cc, int cmc) {
+        this.numpersonas = numpersonas;
+        this.cc = cc;
+        this.cmc = cmc;
+    }
+    public void Coontranar(){
+        System.out.print("la minivan de la empresa Coontranar puede llevar" + numpersonas + " pasajero con un rango con un rango de 410 millas.\n");
+    }
+    public void duobus(){
+        System.out.print("el Doubus de la empresa de Tras Arauca puede llevar" + numpersonas + "pasajeros con rango de 940 millas.");
+    }
+
+    public static void main(String[] args) {
+        
+        Vehiculo vehiculo = new Vehiculo (11,29,22);
+        
+        vehiculo.Coontranar();
+        
+        Vehiculo vehiculo1 = new Vehiculo (40,28,35);
+        
+        vehiculo1.duobus();  
+    }
+}
